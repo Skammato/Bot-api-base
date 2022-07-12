@@ -4,7 +4,7 @@ from .client import Client
 from .handlers import handlers
 from .filters import filters
 
-__version__ =  "0.0.2"
+__version__ = "0.0.2"
 TelegramClient = Client
 filters = filters
 
