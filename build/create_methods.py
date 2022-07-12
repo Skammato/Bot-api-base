@@ -19,7 +19,7 @@ class Parser(HTMLParser):
         "deleteWebhook",
         "getWebhookInfo"
         ]
-        path = './tg_api/methods/'
+        path = '/tg_api/methods/'
         text = requests.get('https://core.telegram.org/bots/api#available-methods').text
         #'<h4><a class="anchor" name="\w+" href="#\w+"><i class="anchor-icon"></i></a>(\w+)</h4>\n<p>(.+)</p>\n(?!<h4>)<table class="table">\n<thead>\n<tr>(\n<th>\w+</th>){1,4}\n</tr>\n</thead>\n<tbody>(\n<tr>\n<td>(\w+)</td>\n<td>(.+)</td>\n<td>(\w+)</td>\n<td>(.+)</td>\n</tr>)+\n</tbody>\n</table>'
         pattern = '<h4><a class="anchor" name="\w+" href="#\w+"><i class="anchor-icon"></i></a>(\w+)</h4>(\n<p>(.+)</p>)*\n(?!<h4>)<table class="table">\n<thead>\n<tr>(\n<th>\w+</th>){1,4}\n</tr>\n</thead>\n<tbody>((\n<tr>\n<td>(\w+)</td>\n<td>(.+)</td>\n<td>(\w+)</td>\n<td>(.+)</td>\n</tr>)+)\n</tbody>\n</table>'
