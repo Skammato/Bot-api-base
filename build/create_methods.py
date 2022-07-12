@@ -125,7 +125,7 @@ class Parser(HTMLParser):
         arguments=self.build_args(m['paramns']),
         rtype=m['rtype']
         )
-        f = open(path+m['name']+".py", "w")
+        f = open(path+m['name']+".py", "a+")
         f.write(final)
         f.close()
 
